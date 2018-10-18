@@ -53,17 +53,17 @@ class Strings extends Nette\Utils\Strings
 	 */
 	public static function singular($word)
 	{
-        if (preg_match('#(ses|xes|shes|ches)$#i', $word)) {
-            $word = preg_replace('#es$#i', '', $word);
+		if (preg_match('#(ses|xes|shes|ches)$#i', $word)) {
+			$word = preg_replace('#es$#i', '', $word);
 
-        } elseif (preg_match('#ies$#i', $word)) {
-            $word = preg_replace('#ies$#i', 'y', $word);
+		} elseif (preg_match('#ies$#i', $word)) {
+			$word = preg_replace('#ies$#i', 'y', $word);
 
-        } else {
-            $word = preg_replace('#s$#i', '', $word);
-        }
+		} else {
+			$word = preg_replace('#s$#i', '', $word);
+		}
 
-        return $word;
+		return $word;
 	}
 
 
@@ -74,17 +74,17 @@ class Strings extends Nette\Utils\Strings
 	 */
 	public static function plural($word)
 	{
-        if (preg_match('#(s|x|sh|ch)$#i', $word)) {
-            $word.= 'es';
-            
-        } elseif (preg_match('#y$#i', $word)) {
-            $word = preg_replace('#y$#i', 'ies', $word);
-            
-        } else {
-            $word.= 's';
-        }
+		if (preg_match('#(s|x|sh|ch)$#i', $word)) {
+			$word.= 'es';
 
-        return $word;
+		} elseif (preg_match('#y$#i', $word)) {
+			$word = preg_replace('#y$#i', 'ies', $word);
+
+		} else {
+			$word.= 's';
+		}
+
+		return $word;
 	}
 
 }
