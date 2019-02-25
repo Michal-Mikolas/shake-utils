@@ -14,7 +14,7 @@ use Nette,
  *
  * @author  Michal Mikoláš <nanuqcz@gmail.com>
  */
-class UploadTools extends Nette\Object
+class UploadTools
 {
 	const IMAGE = '(jpe?g)|(png)|(gif)|(bmp)|(ico)';
 
