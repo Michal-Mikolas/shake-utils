@@ -1,7 +1,7 @@
 <?php
 namespace Shake\Utils;
 
-use \Nette;
+use Nette;
 
 
 /**
