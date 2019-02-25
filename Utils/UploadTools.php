@@ -27,16 +27,17 @@ class UploadTools extends Nette\Object
 	}
 
 
-	public function upload(FileUpload $file, string $dir)
+	public function upload(FileUpload $file, string $dir, string $filename = NULL)
 	{
 		$dir = trim($dir, '/\\');
 		FileSystem::createDir("$this->wwwDir/$dir");
 
-		$fileName = $this->getSafeFilename($dir, $file->name);
+		$filename = $filename?: $file->name;
+		$filename = $this->getSafeFilename($dir, $filename);
 
-		$file->move("$this->wwwDir/$dir/$fileName");
+		$file->move("$this->wwwDir/$dir/$filename");
 
-		return "/$dir/$fileName";
+		return "/$dir/$filename";
 	}
 
 
